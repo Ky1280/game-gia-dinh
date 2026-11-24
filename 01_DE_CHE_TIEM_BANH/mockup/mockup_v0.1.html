@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đế chế Tiệm Bánh — Mockup v0.1</title>
+<style>
+:root{--cream:#fff7ec;--paper:#fffdf8;--brown:#5b3a29;--brown2:#8a5a3c;--line:#ead9c4;--mute:#9a8676;
+--p1:#e4572e;--p2:#2e86ab;--p3:#3bb273;--p4:#9b5de5;--gold:#f2a541;--good:#2f9e44;--bad:#d9480f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#efe3d3;font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;color:var(--brown);padding:20px 12px 40px}
+h1.page{text-align:center;font-size:20px}
+p.sub{text-align:center;font-size:13px;color:var(--mute);margin:4px 0 18px}
+.row{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.col{display:flex;flex-direction:column;align-items:center;gap:6px}
+.cap{font-weight:800;font-size:13px}
+.phone{width:390px;max-width:100%;height:844px;border:10px solid #2b1d14;border-radius:44px;background:var(--cream);overflow:hidden;display:flex;flex-direction:column;position:relative;box-shadow:0 16px 40px rgba(60,30,10,.25)}
+.sb{height:30px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 24px;font-size:12px;font-weight:700;color:var(--brown2)}
+.scr{flex:1;overflow:hidden;padding:4px 14px 0}
+.hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.hd h2{font-size:18px;font-weight:900}
+.chip{font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px;color:#fff}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:10px 12px;margin-bottom:8px;box-shadow:0 2px 0 var(--line)}
+.lbl{font-size:11px;color:var(--mute);font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+.big{font-size:26px;font-weight:900}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.mini{background:#fbefe0;border-radius:10px;padding:6px 8px}
+.mini b{display:block;font-size:15px}
+.star{color:var(--gold)}
+.event{background:linear-gradient(135deg,#ffe8c2,#ffd6a0);border:2px dashed var(--gold)}
+.event h4{font-size:15px;margin:2px 0}
+.event p{font-size:12.5px;line-height:1.4}
+.stock{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}
+.stock div{background:#fbefe0;border-radius:9px;padding:5px;text-align:center;font-size:11px}
+.stock div b{display:block;font-size:14px}
+.warn{color:var(--bad);font-weight:800}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:13px;font:900 16px inherit;font-family:inherit;color:#fff;background:var(--brown);margin-top:4px}
+.btn.alt{background:var(--gold);color:#3b2412}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);background:#f3e3cf;border-radius:12px;padding:3px;margin-bottom:8px}
+.tabs button{border:0;background:none;font:800 12.5px inherit;font-family:inherit;padding:8px 2px;border-radius:9px;color:var(--brown2)}
+.tabs button.on{background:var(--paper);color:var(--brown);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.item{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.item:last-child{border:0}
+.item .ic{font-size:22px;width:30px;text-align:center}
+.item .nm{flex:1}
+.item .nm small{display:block;color:var(--mute);font-size:11px}
+.step{display:flex;align-items:center;gap:4px}
+.step button{width:30px;height:30px;border-radius:9px;border:1px solid var(--line);background:#fff;font:900 16px inherit;color:var(--brown)}
+.step span{min-width:28px;text-align:center;font-weight:900}
+.bar{height:8px;background:#f3e3cf;border-radius:6px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--brown2)}
+.price{font-size:12px;font-weight:800}
+.up{color:var(--bad)} .down{color:var(--good)}
+.pass{position:absolute;inset:0;background:var(--p2);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;z-index:3}
+.pass .av{width:96px;height:96px;border-radius:50%;background:#fff3;display:grid;place-items:center;font-size:52px;margin-bottom:14px}
+.pass h3{font-size:26px;font-weight:900}
+.pass p{opacity:.9;margin:6px 0 22px}
+.pass button{border:0;background:#fff;color:var(--p2);font:900 17px inherit;font-family:inherit;padding:14px 28px;border-radius:16px}
+.rank .r{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.rank .r:last-child{border:0}
+.rank .no{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;font-size:13px}
+.rank .nm{flex:1;font-weight:800;font-size:14px}
+.rank .v{font-weight:900}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.tbl td{padding:4px 2px;border-bottom:1px dashed var(--line)}
+.tbl td:last-child{text-align:right;font-weight:800}
+.nav{flex:none;display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper);border-top:1px solid var(--line);padding:7px 0 16px}
+.nav div{text-align:center;font-size:11px;color:var(--mute);font-weight:700}
+.nav div i{display:block;font-style:normal;font-size:19px}
+.nav .on{color:var(--brown)}
+.toggle{display:flex;gap:8px;justify-content:center;margin-bottom:14px;flex-wrap:wrap}
+.toggle button{border:1px solid #c9b29a;background:#fff;border-radius:20px;padding:7px 13px;font:700 13px inherit;font-family:inherit;color:var(--brown)}
+.toggle button.on{background:var(--brown);color:#fff}
+.notes{max-width:860px;margin:22px auto 0;background:#fff;border-radius:14px;padding:16px 18px;font-size:14px;line-height:1.6}
+.notes li{margin-left:18px}
+</style>
+</head>
+<body>
+<h1 class="page">Đế chế Tiệm Bánh — Mockup giao diện v0.1</h1>
+<p class="sub">Mùa 3 · Trung thu · Ngày 8/20 · 3 người chơi · số liệu minh hoạ</p>
+<div class="toggle"><button class="on" id="tPass">Màn 1: có màn chuyền máy</button><button id="tNo">Màn 1: đã mở (Bảng tiệm)</button></div>
+
+<div class="row">
+<!-- ===== MÀN 1 ===== -->
+<div class="col"><div class="cap">Màn 1 · Chuyền máy + Bảng tiệm</div>
+<div class="phone">
+  <div class="sb"><span>Ngày 8/20</span><span>🔊</span></div>
+  <div class="scr">
+    <div class="hd"><h2>🏠 Tiệm Bố</h2><span class="chip" style="background:var(--p2)">Lượt của Bố</span></div>
+    <div class="card"><div class="lbl">Tiền mặt</div><div class="big">1.240 xu</div>
+      <div class="g3"><div class="mini"><span class="lbl">Uy tín</span><b class="star">★★★★☆</b></div><div class="mini"><span class="lbl">Nợ vay</span><b>300</b></div><div class="mini"><span class="lbl">Thợ</span><b>3 người</b></div></div>
+    </div>
+    <div class="card event"><div class="lbl">🎴 Sự kiện hôm nay</div><h4>🏮 Rằm sắp tới — Lễ hội phố</h4><p>Nhu cầu <b>bánh mùa vụ ×2</b>, các bánh khác ×1,3. Giá <b>trứng +40%</b> trong 2 ngày.</p></div>
+    <div class="card"><div class="lbl">Kho nguyên liệu (số còn · hạn dùng)</div>
+      <div class="stock"><div>🌾<b>24</b>8 ngày</div><div>🥚<b>10</b><span class="warn">1 ngày!</span></div><div>🧈<b>6</b>4 ngày</div><div>🥛<b>4</b>2 ngày</div><div>🍬<b>15</b>12 ngày</div><div>🍓<b>0</b>—</div><div>🌰<b>8</b>10 ngày</div><div>🥮<b>12</b>bánh còn</div></div>
+    </div>
+    <div class="card"><div class="lbl">Hôm qua</div><div class="g2"><div class="mini"><span class="lbl">Lãi</span><b style="color:var(--good)">+186 xu</b></div><div class="mini"><span class="lbl">Bánh bỏ</span><b style="color:var(--bad)">7 cái</b></div></div></div>
+    <button class="btn">Lập kế hoạch hôm nay →</button>
+  </div>
+  <div class="nav"><div class="on"><i>🏠</i>Tiệm</div><div><i>📋</i>Kế hoạch</div><div><i>🏆</i>Xếp hạng</div><div><i>⚙️</i>Cài đặt</div></div>
+  <div class="pass" id="pass"><div class="av">👨</div><h3>Đưa máy cho Bố</h3><p>Người khác đừng nhìn nhé!<br>Kế hoạch của Mẹ đã được giấu.</p><button id="passBtn">Bố đã cầm máy ✓</button></div>
+</div></div>
+
+<!-- ===== MÀN 2 ===== -->
+<div class="col"><div class="cap">Màn 2 · Kế hoạch ngày (thẻ Làm bánh)</div>
+<div class="phone">
+  <div class="sb"><span>Ngày 8/20</span><span>🔊</span></div>
+  <div class="scr">
+    <div class="hd"><h2>📋 Kế hoạch</h2><span class="chip" style="background:var(--p2)">Bố · 1.240 xu</span></div>
+    <div class="tabs"><button>🛒 Mua</button><button class="on">🧁 Làm</button><button>🏷️ Giá</button><button>🏪 Tiệm</button></div>
+    <div class="card"><div class="lbl">Công thợ hôm nay: 17/24 · Lò: 5/6 mẻ</div><div class="bar"><i style="width:71%"></i></div></div>
+    <div class="card">
+      <div class="item"><span class="ic">🍞</span><span class="nm">Bánh mì<small>2 bột + 1 trứng · 1 công</small></span><div class="step"><button>−</button><span>20</span><button>+</button></div></div>
+      <div class="item"><span class="ic">🍪</span><span class="nm">Cookies<small>bột·đường·bơ·hạt · để 5 ngày</small></span><div class="step"><button>−</button><span>6</span><button>+</button></div></div>
+      <div class="item"><span class="ic">🍰</span><span class="nm">Bông lan<small>thiếu 🥛 sữa 1 phần</small></span><div class="step"><button>−</button><span class="warn">2</span><button>+</button></div></div>
+      <div class="item"><span class="ic">🥮</span><span class="nm">Bánh Trung thu ✨<small>bánh mùa vụ · 3 công · để 7 ngày</small></span><div class="step"><button>−</button><span>4</span><button>+</button></div></div>
+      <div class="item" style="opacity:.5"><span class="ic">🎂</span><span class="nm">Bánh kem 🔒<small>Nghiên cứu: 200 xu · 2 ngày</small></span></div>
+    </div>
+    <div class="card"><div class="lbl">💡 Gợi ý</div><p style="font-size:12.5px;line-height:1.4;margin-top:3px">Trứng của anh <b>hết hạn ngày mai</b>. Làm thêm bánh mì để dùng hết, khỏi bỏ 10 trứng.</p></div>
+    <div class="g2"><button class="btn alt">← Mua thêm</button><button class="btn">Xong lượt ✓</button></div>
+  </div>
+  <div class="nav"><div><i>🏠</i>Tiệm</div><div class="on"><i>📋</i>Kế hoạch</div><div><i>🏆</i>Xếp hạng</div><div><i>⚙️</i>Cài đặt</div></div>
+</div></div>
+
+<!-- ===== MÀN 3 ===== -->
+<div class="col"><div class="cap">Màn 3 · Báo cáo tối + Xếp hạng</div>
+<div class="phone">
+  <div class="sb"><span>Tối ngày 8/20</span><span>🔊</span></div>
+  <div class="scr">
+    <div class="hd"><h2>🌙 Báo cáo tối</h2><span class="chip" style="background:var(--brown2)">Cả nhà xem</span></div>
+    <div class="card"><div class="lbl">🏆 Giá trị tiệm</div>
+      <div class="rank">
+        <div class="r"><span class="no" style="background:var(--p1)">1</span><span class="nm">Tiệm Mẹ 👩</span><span class="star">★★★★★</span><span class="v">2.410</span></div>
+        <div class="r"><span class="no" style="background:var(--p2)">2</span><span class="nm">Tiệm Bố 👨</span><span class="star">★★★★</span><span class="v">2.105</span></div>
+        <div class="r"><span class="no" style="background:var(--p3)">3</span><span class="nm">Tiệm Bin 🧒</span><span class="star">★★★</span><span class="v">1.880</span></div>
+      </div>
+    </div>
+    <div class="card"><div class="lbl">Tiệm Bố hôm nay</div>
+      <table class="tbl"><tr><td>Bán được 31/34 bánh (91%)</td><td style="color:var(--good)">+612</td></tr>
+      <tr><td>Nguyên liệu</td><td style="color:var(--bad)">−214</td></tr><tr><td>Lương 3 thợ + tiền thuê</td><td style="color:var(--bad)">−150</td></tr>
+      <tr><td>Lãi vay</td><td style="color:var(--bad)">−9</td></tr><tr><td><b>Lãi hôm nay</b></td><td style="color:var(--good)">+239 xu</td></tr></table>
+    </div>
+    <div class="card"><div class="lbl">📣 Chuyện trên phố</div><p style="font-size:12.5px;line-height:1.5;margin-top:3px">• Tiệm Bin <b>hết bánh Trung thu</b> từ trưa, 18 khách sang Tiệm Mẹ.<br>• Tiệm Mẹ được nhà phê bình khen: <b>+1 sao</b>.<br>• Ngày mai: ☁️ trời âm u, khách −10%.</p></div>
+    <div class="card"><div class="lbl">🏅 Huy hiệu mới</div><p style="font-size:13px;margin-top:3px">Tiệm Bố: <b>"Không bỏ bánh nào"</b> 3 ngày liền</p></div>
+    <button class="btn">Sang ngày 9 ☀️</button>
+  </div>
+  <div class="nav"><div><i>🏠</i>Tiệm</div><div><i>📋</i>Kế hoạch</div><div class="on"><i>🏆</i>Xếp hạng</div><div><i>⚙️</i>Cài đặt</div></div>
+</div></div>
+</div>
+
+<div class="notes"><b>Ghi chú mockup</b><ul>
+<li>Màn 1: màn màu "Đưa máy cho Bố" che kế hoạch của người trước. Bấm "Bố đã cầm máy" thì vào Bảng tiệm. Có nút chuyển ở trên đầu trang để xem cả 2 trạng thái.</li>
+<li>Màn 2: 4 thẻ Mua · Làm · Giá · Tiệm. App tự cảnh báo thiếu nguyên liệu, nguyên liệu sắp hết hạn, vượt công thợ, vượt số mẻ lò.</li>
+<li>Màn 3: cả nhà xem chung bảng xếp hạng, lãi/lỗ, chuyện trên phố, dự báo ngày mai.</li>
+<li>Mỗi người chơi 1 màu riêng (cam, xanh dương, xanh lá, tím). Tiền là "xu" trong game.</li>
+</ul></div>
+<script>
+const pass=document.getElementById('pass');
+document.getElementById('passBtn').onclick=()=>show(false);
+document.getElementById('tPass').onclick=()=>show(true);
+document.getElementById('tNo').onclick=()=>show(false);
+function show(p){pass.style.display=p?'flex':'none';document.getElementById('tPass').classList.toggle('on',p);document.getElementById('tNo').classList.toggle('on',!p);}
+</script>
+</body>
+</html>

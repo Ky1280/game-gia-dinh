@@ -1,0 +1,10 @@
+{
+  "name": "de-che-tiem-banh",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "mophong": "node tools/mophong.js"
+  }
+}

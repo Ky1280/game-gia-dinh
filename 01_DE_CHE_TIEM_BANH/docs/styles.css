@@ -1,0 +1,176 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+html.lon{font-size:18px}
+body{font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;min-height:100vh;min-height:100dvh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+button{font-family:inherit;cursor:pointer;touch-action:manipulation}
+button:disabled{opacity:.45;cursor:not-allowed}
+input,select{font-family:inherit;font-size:1rem}
+.bg{position:fixed;inset:0;background-size:cover;background-position:center top;z-index:0}
+.veil{position:fixed;inset:0;z-index:0;pointer-events:none}
+body.menuOn .veil{opacity:.15}
+#app{position:relative;z-index:1;max-width:560px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:8px;padding:10px 14px 8px;font-weight:800;font-size:.85rem}
+.top .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top button{border:0;background:none;font-size:1.3rem;width:38px;height:38px;border-radius:12px}
+.scr{flex:1;padding:4px 14px 12px}
+.act{position:sticky;bottom:0;z-index:5;padding:10px 14px calc(12px + env(safe-area-inset-bottom))}
+.act .msg{font-size:.8rem;font-weight:700;margin-bottom:6px;text-align:center}
+@media (min-width:860px) and (orientation:landscape){
+  #app{max-width:1100px}
+  .scr.cot2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;align-content:start}
+  .scr.cot2 .full{grid-column:1/-1}
+  .act{max-width:560px;margin:0 auto;width:100%}
+}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:2px 0 8px}
+.hd h3{font-size:1.2rem;min-width:0}
+.chip{font-size:.72rem;font-weight:800;padding:4px 10px;border-radius:20px;color:#fff;white-space:nowrap}
+.card{border-radius:16px;padding:11px 13px;margin-bottom:9px}
+.lbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.4px}
+.big{font-size:1.7rem;font-weight:900}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.mini{border-radius:10px;padding:6px 8px;min-width:0}
+.mini b{display:block;font-size:.95rem}
+.stock{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}
+.stock div{border-radius:9px;padding:5px 3px;text-align:center;font-size:.68rem;line-height:1.25}
+.stock div b{display:block;font-size:.92rem}
+.ev h4{font-size:1rem;margin:3px 0}.ev p{font-size:.85rem;line-height:1.4}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:13px 10px;font-weight:900;font-size:1rem;line-height:1.15}
+.btn.sm{padding:9px 8px;font-size:.85rem;border-radius:11px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);border-radius:12px;padding:3px;margin-bottom:9px;position:sticky;top:56px;z-index:4}
+.tabs button{border:0;background:none;font-weight:800;font-size:.82rem;padding:9px 2px;border-radius:9px}
+.item{display:flex;align-items:center;gap:8px;padding:7px 0;font-size:.88rem}
+.item:last-child{border-bottom:0!important}
+.item .ic{font-size:1.45rem;width:32px;text-align:center;flex:none}
+.item .nm{flex:1;min-width:0}.item .nm small{display:block;font-size:.72rem;line-height:1.3}
+.step{display:flex;align-items:center;gap:3px;flex:none}
+.step button{width:32px;height:34px;border-radius:10px;font-weight:900;font-size:1.05rem}
+.step button.x5{width:30px;font-size:.7rem}
+.step span{min-width:30px;text-align:center;font-weight:900}
+.bar{height:8px;border-radius:6px;overflow:hidden;margin-top:4px}.bar i{display:block;height:100%;transition:width .2s}
+.bar.over i{background:var(--bad)!important}
+.r{display:flex;align-items:center;gap:8px;padding:7px 0}
+.r:last-child{border-bottom:0!important}
+.no{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;font-size:.85rem;flex:none}
+.r .nm{flex:1;font-weight:800;font-size:.9rem;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.r .v{font-weight:900;white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;font-size:.82rem}.tbl td{padding:5px 2px}.tbl td+td{text-align:right;font-weight:800;white-space:nowrap}
+.strip{height:68px;border-radius:14px;margin-bottom:9px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.strip span{position:absolute;left:12px;bottom:8px;font-weight:900;font-size:.82rem;padding:3px 9px;border-radius:10px}
+.star{color:#f2a541;letter-spacing:1px;white-space:nowrap}
+.pos{color:var(--good)}.neg{color:var(--bad)}.warn{color:var(--bad);font-weight:800}
+.note{font-size:.82rem;line-height:1.45}
+.opt{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.opt button{border-radius:11px;padding:8px 11px;font-weight:800;font-size:.82rem}
+.row{display:flex;align-items:center;gap:8px}
+.row .sp{flex:1}
+.hide{display:none!important}
+
+/* Menu */
+.menu{flex:1;display:flex;flex-direction:column;align-items:center;padding:56px 22px 26px;text-align:center}
+.menu .title{border-radius:22px;padding:14px 18px 12px;width:100%}
+.menu .logo{font-size:3.2rem;line-height:1}
+.menu h1{font-size:2.1rem;line-height:1.1;margin:8px 0 4px}
+.menu .tag{font-size:.9rem}
+.menu .btn{margin-top:10px;font-size:1.05rem;padding:14px}
+.menu .strip{width:100%;margin-top:12px}
+.seasons{display:flex;gap:6px;justify-content:center;margin:12px 0 4px;width:100%}
+.seasons div{flex:1;max-width:64px;border-radius:12px;padding:6px 2px;font-size:.62rem;font-weight:800}
+.seasons div b{display:block;font-size:1.25rem}
+.seasons .khoa{opacity:.5}
+
+/* Màn phủ: chuyền máy, hộp thoại */
+.ov{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}
+.ov .av{width:100px;height:100px;border-radius:50%;display:grid;place-items:center;font-size:3.3rem;margin-bottom:14px}
+.ov h3{font-size:1.6rem;font-weight:900}.ov p{margin:6px 0 22px;line-height:1.45}
+.ov .go{border:0;font-weight:900;font-size:1.05rem;padding:15px 28px;border-radius:16px}
+.dlg{position:fixed;inset:0;z-index:30;background:rgba(20,10,5,.55);display:flex;align-items:center;justify-content:center;padding:18px}
+.dlg .box{width:100%;max-width:420px;max-height:90vh;overflow:auto;border-radius:18px;padding:16px}
+.dlg h3{font-size:1.15rem;margin-bottom:8px}
+.toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);z-index:40;padding:10px 16px;border-radius:14px;font-weight:800;font-size:.88rem;max-width:92vw;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.field{display:block;margin:8px 0}
+.field input,.field select{width:100%;border-radius:11px;padding:10px 11px;border:1px solid #0003;background:#fffd;color:#3a2a20}
+.pl{border-radius:14px;padding:10px;margin-bottom:8px}
+.pl .row input{flex:1;min-width:0;border-radius:10px;padding:9px 10px;border:1px solid #0003;background:#fffd;color:#3a2a20}
+.icons{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.icons button{width:36px;height:36px;border-radius:10px;font-size:1.2rem;border:2px solid transparent;background:#fff6}
+.icons button.on{border-color:var(--accent);background:#fff}
+.theme3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.theme3 button{border-radius:14px;padding:6px;border:3px solid transparent;background:#fff2;color:inherit;font-weight:800;font-size:.78rem}
+.theme3 button.on{border-color:var(--accent)}
+.theme3 i{display:block;height:70px;border-radius:10px;background-size:cover;margin-bottom:5px}
+.guide h4{margin:10px 0 3px;font-size:.95rem}.guide p,.guide li{font-size:.86rem;line-height:1.5}.guide ul{padding-left:18px}
+
+/* ===== A — Tiệm bánh ấm áp ===== */
+.A{--ink:#4a2c1c;--mute:#8b6a55;--card:rgba(255,250,243,.94);--mini:#f6e6d3;--accent:#c46a3a;--berry:#e0607a;--good:#2f8a3e;--bad:#c4452f}
+body.A{background:#f7ead9;color:var(--ink)}
+.A .veil{background:linear-gradient(180deg,rgba(255,246,234,.6),rgba(255,246,234,.86))}
+.A h1,.A h3{font-family:"Noto Serif","Times New Roman",serif}
+.A .card,.A .pl{background:var(--card);box-shadow:0 2px 0 #e7cfb4,0 6px 16px rgba(90,50,20,.08)}
+.A .lbl,.A small,.A .mute{color:var(--mute)}
+.A .mini,.A .stock div{background:var(--mini)}
+.A .ev{background:linear-gradient(135deg,#ffe3d0,#ffd1dc);border:2px dashed var(--berry)}
+.A .btn{background:var(--ink);color:#fff}.A .btn.alt{background:var(--berry);color:#fff}.A .btn.ghost{background:#fffaf3;color:var(--ink);border:1px solid #e3cdb3}
+.A .tabs{background:#efdcc6}.A .tabs button{color:var(--mute)}.A .tabs .on{background:#fff;color:var(--ink)}
+.A .step button,.A .opt button{background:#fff;border:1px solid #e3cdb3;color:var(--ink)}.A .opt button.on{background:var(--ink);color:#fff}
+.A .bar{background:#efdcc6}.A .bar i{background:var(--accent)}
+.A .item,.A .r,.A .tbl td{border-bottom:1px dashed #e7d3bd}
+.A .top,.A .act{background:rgba(255,250,243,.95)}.A .top{border-bottom:1px solid #e7cfb4}.A .act{border-top:1px solid #e7cfb4}
+.A .menu h1{color:#5a2e17;text-shadow:0 2px 0 #fff}.A .menu .tag{color:#7a4b30}
+.A .menu .title{background:rgba(255,248,238,.92);box-shadow:0 4px 14px rgba(90,50,20,.15)}
+.A .seasons div{background:rgba(255,250,243,.92);border:1px solid #e3cdb3}
+.A .ov{background:linear-gradient(160deg,#c46a3a,#8a3f1f);color:#fff}.A .ov .av{background:#fff3}.A .ov .go{background:#fff;color:#8a3f1f}
+.A .strip span{background:#fffaf3e6;color:#8a3f1f}
+.A .dlg .box,.A .toast{background:#fffaf3;color:var(--ink)}
+
+/* ===== B — Kẹo ngọt vui nhộn ===== */
+.B{--ink:#4b3a63;--mute:#8a7aa3;--card:rgba(255,255,255,.93);--mini:#fff0f6;--accent:#ff6fa0;--mint:#5fcfb0;--good:#1f9e7a;--bad:#e2456f}
+body.B{background:#ffeaf2;color:var(--ink)}
+.B .bg{background-size:140px 140px;background-repeat:repeat}
+.B .veil{background:linear-gradient(180deg,rgba(255,240,247,.4),rgba(255,247,251,.75))}
+.B h1,.B h3,.B .btn,.B .tabs button{font-family:"Trebuchet MS","Segoe UI",sans-serif}
+.B .card,.B .pl{background:var(--card);border:2px solid #ffd3e4;box-shadow:0 4px 0 #ffc2d8}
+.B .lbl,.B small,.B .mute{color:var(--mute)}
+.B .mini,.B .stock div{background:var(--mini)}
+.B .ev{background:linear-gradient(135deg,#fff4c9,#d9f7ee);border:2px dashed var(--mint)}
+.B .btn{background:var(--accent);color:#fff;box-shadow:0 4px 0 #d94f82}.B .btn.alt{background:var(--mint);color:#11463a;box-shadow:0 4px 0 #3fae90}.B .btn.ghost{background:#fff;color:var(--accent);box-shadow:0 3px 0 #ffc2d8;border:2px solid #ffd3e4}
+.B .tabs{background:#ffe0ec}.B .tabs button{color:var(--mute)}.B .tabs .on{background:#fff;color:var(--accent)}
+.B .step button,.B .opt button{background:#fff;border:2px solid #ffc2d8;color:var(--accent)}.B .opt button.on{background:var(--accent);color:#fff}
+.B .bar{background:#ffe0ec}.B .bar i{background:linear-gradient(90deg,#ff9fc0,#ffd36e)}
+.B .item,.B .r,.B .tbl td{border-bottom:2px dotted #ffd3e4}
+.B .top,.B .act{background:rgba(255,255,255,.95)}.B .top{border-bottom:2px solid #ffd3e4}.B .act{border-top:2px solid #ffd3e4}
+.B .menu h1{color:#ff5b93;text-shadow:0 3px 0 #fff,0 5px 0 #ffc2d8;font-size:2.35rem}.B .menu .tag{color:#6d5a86;font-weight:700}
+.B .menu .title{background:rgba(255,255,255,.92);border:2px solid #ffd3e4}
+.B .seasons div{background:#fff;border:2px solid #ffd3e4}
+.B .ov{background:radial-gradient(circle at 50% 30%,#ff9fc0,#ff6fa0);color:#fff}.B .ov .av{background:#fff4}.B .ov .go{background:#fff;color:#ff4f8b}
+.B .strip span{background:#fffe;color:#ff4f8b}
+.B .dlg .box,.B .toast{background:#fff;color:var(--ink)}
+
+/* ===== C — Lò bánh cổ điển ===== */
+.C{--ink:#f6efe2;--mute:#cdb79a;--card:rgba(40,24,16,.88);--mini:rgba(255,236,200,.08);--accent:#d9a441;--ember:#e8763a;--good:#7fd18b;--bad:#ff8a6b}
+body.C{background:#21140d;color:var(--ink)}
+.C .veil{background:linear-gradient(180deg,rgba(25,14,8,.5),rgba(25,14,8,.8))}
+.C h1,.C h3{font-family:"Noto Serif","Times New Roman",serif}
+.C .card,.C .pl{background:var(--card);border:1px solid rgba(217,164,65,.35);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.C .lbl,.C small,.C .mute{color:var(--mute)}
+.C .mini,.C .stock div{background:var(--mini);border:1px solid rgba(217,164,65,.18)}
+.C .ev{background:linear-gradient(135deg,rgba(232,118,58,.28),rgba(217,164,65,.18));border:1px solid var(--ember)}
+.C .btn{background:linear-gradient(160deg,#e9bd62,#b8812b);color:#2a170b}.C .btn.alt{background:rgba(255,236,200,.12);color:var(--ink);border:1px solid var(--accent)}.C .btn.ghost{background:rgba(25,14,8,.7);color:var(--accent);border:1px solid rgba(217,164,65,.45)}
+.C .tabs{background:rgba(40,24,16,.95)}.C .tabs button{color:var(--mute)}.C .tabs .on{background:var(--accent);color:#2a170b}
+.C .step button,.C .opt button{background:rgba(255,236,200,.1);border:1px solid rgba(217,164,65,.45);color:var(--accent)}.C .opt button.on{background:var(--accent);color:#2a170b}
+.C .bar{background:rgba(255,236,200,.12)}.C .bar i{background:linear-gradient(90deg,var(--ember),var(--accent))}
+.C .item,.C .r,.C .tbl td{border-bottom:1px solid rgba(217,164,65,.18)}
+.C .top,.C .act{background:rgba(25,14,8,.95)}.C .top{border-bottom:1px solid rgba(217,164,65,.3)}.C .act{border-top:1px solid rgba(217,164,65,.3)}
+.C .top button{color:var(--ink)}
+.C .menu h1{color:#f3d59b;text-shadow:0 2px 12px rgba(232,118,58,.6)}.C .menu .tag{color:#e6d4b8}
+.C .menu .title{background:rgba(25,14,8,.6)}
+.C .seasons div{background:rgba(25,14,8,.78);border:1px solid rgba(217,164,65,.4);color:var(--ink)}
+.C .ov{background:radial-gradient(circle at 50% 35%,#6b3518,#1a0e08 75%);color:#f6efe2}.C .ov .av{background:rgba(217,164,65,.25)}.C .ov .go{background:var(--accent);color:#2a170b}
+.C .strip span{background:rgba(25,14,8,.8);color:var(--accent)}
+.C .dlg .box,.C .toast{background:#2a1810;color:var(--ink);border:1px solid rgba(217,164,65,.4)}
+.C .field input,.C .field select,.C .pl .row input{background:#fff1e0;color:#2a170b}
+@media (max-width:360px){
+  .step button.x5{display:none}
+  .scr,.top,.act{padding-left:10px;padding-right:10px}
+  .tabs button{font-size:.74rem}
+  .hd h3{font-size:1.05rem}
+}
