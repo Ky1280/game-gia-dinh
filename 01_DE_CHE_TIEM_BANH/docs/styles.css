@@ -174,3 +174,26 @@ body.C{background:#21140d;color:var(--ink)}
   .tabs button{font-size:.74rem}
   .hd h3{font-size:1.05rem}
 }
+/* v0.4: cảnh báo, bài học, trải nghiệm, cúp, câu đố, hồ sơ */
+.cb.vang{background:#fff4cc!important;border:2px solid #f0b400!important;color:#5a4300}
+.cb.do{background:#ffe1dc!important;border:2px solid #d8452f!important;color:#6b1a10}
+.cb .lbl{color:inherit!important}
+.hoc{border:2px dashed var(--accent)!important}
+.tn5{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:6px}
+.tn5 div{border-radius:9px;padding:5px 2px;text-align:center;font-size:.64rem;line-height:1.3;background:var(--mini)}
+.tn5 div b{display:block;font-size:.62rem;letter-spacing:0}
+.tn5 .yeu{outline:2px solid var(--bad)}
+.cups{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.cups div{border-radius:10px;padding:6px 4px;text-align:center;font-size:.7rem;background:var(--mini)}
+.cups span{display:block;font-size:1.6rem}
+.cups small{display:block}
+.quiz{display:grid;gap:7px;margin-top:8px}
+.quiz button{text-align:left;border-radius:12px;padding:11px 12px;font-weight:700;font-size:.9rem;border:2px solid #0002;background:#fff;color:#3a2a20}
+.quiz button.dung{background:#d9f5df;border-color:#2f8a3e}
+.quiz button.sai{background:#ffe1dc;border-color:#d8452f}
+.quiz button:disabled{opacity:1}
+.hsRow{display:flex!important;align-items:center;gap:10px;width:100%;text-align:left;border:0;cursor:pointer;color:inherit;font:inherit}
+.hsRow .sp{flex:1;min-width:0}.hsRow small{display:block}
+details summary{cursor:pointer;font-weight:800}
+.tabs button{font-size:.76rem}
+@media (max-width:400px){.tabs button{font-size:.68rem;padding:8px 1px}}

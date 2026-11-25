@@ -79,7 +79,7 @@ test('mùa 1 chưa có nghiên cứu, chi nhánh; bánh chưa mở khoá thì kh
   assert.match(E.kiemTraKeHoach(st, 0, { chiNhanh: true }).loi[0], /chưa mở được chi nhánh/);
   assert.match(E.kiemTraKeHoach(st, 0, { lam: { sukem: 1 } }).loi[0], /không có trong mùa/);
   const s2 = chuan(van({ mua: 2 }));
-  assert.match(E.kiemTraKeHoach(s2, 0, { mua: { bot: 1, trung: 2, sua: 2 }, lam: { sukem: 1 } }).loi[0], /Chưa nghiên cứu/);
+  assert.match(E.kiemTraKeHoach(s2, 0, { mua: { bot: 1, trung: 2, sua: 2 }, lam: { sukem: 1 } }).loi[0], /Chưa có công thức/);
 });
 test('nghiên cứu mất 2 ngày rồi mở khoá công thức', () => {
   let st = chuan(van({ mua: 2 }));
